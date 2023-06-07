@@ -41,7 +41,7 @@ with psycopg.connect("postgresql://postgres:postgres@192.168.1.159:2022/general"
         dflongitude = []
         dflatitude = []
 
-        print(len(data.keys()), " keys")
+        #print(len(data.keys()), " keys")
         ls = data.keys()
         with open('data/points.csv', 'w') as csvfile:
             fieldnames = ['id', 'lon', 'lat']
@@ -62,7 +62,7 @@ with psycopg.connect("postgresql://postgres:postgres@192.168.1.159:2022/general"
                     cur.execute(
                         "INSERT INTO gps_targets (id, lon, lat) VALUES (%s, %s, %s)", vals)
                     conn.commit()
-            print(pose, " poses found")
+            #print(pose, " poses found")
             BBox = (min(dflongitude), max(dflongitude),
                      min(dflatitude), max(dflatitude)   )
             print(BBox)
