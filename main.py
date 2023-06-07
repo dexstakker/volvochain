@@ -10,7 +10,7 @@ import json
 # Note: the module name is psycopg, not psycopg3
 
 # Connect to an existing database
-with psycopg.connect("postgresql://postgres:postgres@localhost:2022/general") as conn:
+with psycopg.connect("postgresql://postgres:postgres@192.168.1.159:2022/general") as conn:
 
     # Open a cursor to perform database operations
     with conn.cursor() as cur:
